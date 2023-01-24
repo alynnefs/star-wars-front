@@ -22,7 +22,15 @@ import HelloWorld from './components/HelloWorld.vue'
     <button @click="getItemsAndRecommedatios()">Search</button>
     
     <!-- respose of get -->
-    <div v-for="item in items_rec.item"> <!--:key="p.name">-->
+    <br />
+    <h2>Item found</h2>
+    <div v-for="item in items_rec.item">
+        <h2>{{ item.name }}</h2>
+    </div>
+
+    <br />
+    <h2>Recommendations</h2>
+    <div v-for="item in items_rec.recommendations">
         <h2>{{ item.name }}</h2>
     </div>
 
