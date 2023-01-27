@@ -131,6 +131,7 @@ select {
   border-radius:50%;
   color:#fff000;
   box-shadow:0 0 20px rgba(0,0,0,.5);
+  margin-left: 40%;
 }
 .ring:before
 {
