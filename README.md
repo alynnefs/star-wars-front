@@ -1,28 +1,54 @@
-# star-wars-front
+# Star Wars API (front)
 
-This template should help get you started developing with Vue 3 in Vite.
+Este projeto é o front do [Star Wars API](https://github.com/alynnefs/star-wars-back). As informações detalhadas estão descritas lá.
 
-## Recommended IDE Setup
+## Executando com Docker
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Para criar a imagem do docker, execute o seguinte comando na raiz do projeto:
 
-## Customize configuration
+```
+docker build -t sw-front .
+```
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+O resultado deverá ser
 
-## Project Setup
+![](https://i.imgur.com/6jBTBmc.png)
+
+
+Após criada, execute o container com:
+
+```
+docker run -it -p 8080:8080 --rm --name sw-front-1 sw-front
+```
+
+A saída deverá ser semelhante a esta:
+
+![](https://i.imgur.com/DZbmJ8o.png)
+
+Como o servidor fica "aberto", não é tão necessário verificar o container. Mas caso queira olhar mesmo assim, basta usar o comando `docker container ls`. A saída deverá ser parecida com essa:
+
+![](https://i.imgur.com/hsBZZT4.png)
+
+
+## Executando localmente
+
+## Especificações usadas no desenvolvimento
+- NPM: 9.2.0
+- Vue/cli: 5.0.8
+
+## Como instalar
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Como executar localmente
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Como compilar paraa produção
 
 ```sh
 npm run build
