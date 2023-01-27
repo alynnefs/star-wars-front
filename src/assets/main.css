@@ -44,19 +44,33 @@ a,
 
 .text {
   color: hsla(54, 100%, 56.1%, 1);
-  text-shadow: 2px 0 0 #000,
-               -2px 0 0 #000,
-               0 2px 0 #000,
-               0 -2px 0 #000,
-               1px 1px #000,
-               -1px -1px 0 #000,
-               1px -1px 0 #000,
-               -1px 1px 0 #000;
+  text-shadow: 4px 0 0 #000,
+               -4px 0 0 #000,
+               0 4px 0 #000,
+               0 -4px 0 #000,
+               3px 3px #000,
+               -3px -3px 0 #000,
+               3px -3px 0 #000,
+               -3px 3px 0 #000;
+}
+
+select {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  border: 1px solid black;
+  background-color: rgba(0, 0, 0, 100);
+}
+
+.btn-size {
+  height: 50px;
+  width: 200px;
 }
 
 /* Button */
 .button-52 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 200;
   letter-spacing: 1px;
   padding: 13px 20px 13px;
@@ -68,6 +82,7 @@ a,
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  margin-left: 25%;
 }
 
 .button-52:after {
@@ -103,4 +118,77 @@ a,
   padding: 0 20px;
   margin-bottom: 20px;
   border: None;
+}
+
+/* loading */
+.ring
+{
+  position:relative;
+  width:30px;
+  height:30px;
+  background:transparent;
+  border:3px solid #3c3c3c;
+  border-radius:50%;
+  color:#fff000;
+  box-shadow:0 0 20px rgba(0,0,0,.5);
+}
+.ring:before
+{
+  content:'';
+  position:absolute;
+  top:-3px;
+  left:-3px;
+  width:100%;
+  height:100%;
+  border:3px solid transparent;
+  border-top:3px solid #fff000;
+  border-right:3px solid #fff000;
+  border-radius:50%;
+  animation:animateC 2s linear infinite;
+}
+span
+{
+  display:block;
+  position:relative;
+  top:calc(50% - 2px);
+  left:50%;
+  width:50%;
+  height:4px;
+  background:transparent;
+  transform-origin:left;
+  animation:animate 2s linear infinite;
+}
+span:before
+{
+  content:'';
+  position:absolute;
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  background:#fff000;
+  top:-6px;
+  right:-8px;
+  box-shadow:0 0 20px #fff000;
+}
+@keyframes animateC
+{
+  0%
+  {
+    transform:rotate(0deg);
+  }
+  100%
+  {
+    transform:rotate(360deg);
+  }
+}
+@keyframes animate
+{
+  0%
+  {
+    transform:rotate(45deg);
+  }
+  100%
+  {
+    transform:rotate(405deg);
+  }
 }

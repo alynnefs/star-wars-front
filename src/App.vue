@@ -9,7 +9,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
   <input v-model="name" placeholder="search here" class="filter text"/>
 
-  <select v-model="selected" class="button-52 text">
+  <select v-model="selected" class="text">
     <option>people</option>
     <option>films</option>
     <option>planets</option>
@@ -17,10 +17,15 @@ import { RouterLink, RouterView } from 'vue-router'
     <option>all</option>
   </select>
 
-  <center>
-    <button @click="getItemsAndRecommedatios()" class="button-52 text" role="button">Search</button>
-  </center>
-  
+
+    <button @click="getItemsAndRecommedatios()" class="button-52 text btn-size" role="button">
+      <div v-if="loading" class="ring">
+        <span></span>
+      </div>
+      <p v-else>Search</p>
+    </button>
+
+
   <!-- respose of get -->
   <br /><br /><br />
   <div v-for="element in items_rec">
@@ -166,6 +171,7 @@ import { RouterLink, RouterView } from 'vue-router'
 export default {
   data() {
     return {
+      loading: false,
       selected: 'all',
       options: [
         { text: 'people', value: 'people' },
@@ -181,10 +187,14 @@ export default {
   methods: {
   
     getItemsAndRecommedatios() {
+      this.loading = true;
       // TODO: remove url hard coded -->
       fetch(`http://127.0.0.1:5000/${this.selected}/${this.name}`)
         .then(response => response.json())
         .then(data => this.items_rec = data)
+        .then(() => {
+           this.loading = false;
+        })
     }
   },
   click() {
